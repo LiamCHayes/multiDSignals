@@ -42,9 +42,9 @@ avgSignals <- function(signal_list, index=TRUE) {
     for (i in 2:length(sigs)) {
       # Align vectors with dtw
       if (which.max(c(length(avgVec), length(sigs[[i]]))) == 1) {
-        while (length(sigs[[i]]) < length(avgVec)/2) sigs[[i]] <- rep(sigs[[i]], each=2)
+        while (length(sigs[[i]]) <= length(avgVec)/2) sigs[[i]] <- rep(sigs[[i]], each=2)
       } else {
-        while (length(avgVec) < length(sigs[[i]])/2) avgVec <- rep(avgVec, each=2)
+        while (length(avgVec) <= length(sigs[[i]])/2) avgVec <- rep(avgVec, each=2)
       }
       alignment <- dtw(avgVec, sigs[[i]], keep.internals=TRUE, step.pattern=typeIIIc)
       new_vec2 <- rep(0, length(alignment$index2))

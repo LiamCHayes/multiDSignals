@@ -31,9 +31,9 @@ compareSignals <- function(signal1, signal2, index=TRUE) {
 
   # Make sure lengths of signals are not too far from each other
   if (which.max(c(nrow(signal1), nrow(signal2))) == 1) {
-    while (nrow(signal2) < nrow(signal1)/2) signal2 <- lapply(signal2, rep, each=2) %>% as.data.frame()
+    while (nrow(signal2) <= nrow(signal1)/2) signal2 <- lapply(signal2, rep, each=2) %>% as.data.frame()
   } else {
-    while (nrow(signal1) < nrow(signal2)/2) signal1 <- lapply(signal1, rep, each=2) %>% as.data.frame()
+    while (nrow(signal1) <= nrow(signal2)/2) signal1 <- lapply(signal1, rep, each=2) %>% as.data.frame()
   }
 
   # Compare each signal and average distances
@@ -81,9 +81,9 @@ compareSignals_highVar <- function(signal1, signal2, nSigs, index=TRUE) {
 
   # Make sure lengths of signals are not too far from each other
   if (which.max(c(nrow(signal1), nrow(signal2))) == 1) {
-    while (nrow(signal2) < nrow(signal1)/2) signal2 <- lapply(signal2, rep, each=2) %>% as.data.frame()
+    while (nrow(signal2) <= nrow(signal1)/2) signal2 <- lapply(signal2, rep, each=2) %>% as.data.frame()
   } else {
-    while (nrow(signal1) < nrow(signal2)/2) signal1 <- lapply(signal1, rep, each=2) %>% as.data.frame()
+    while (nrow(signal1) <= nrow(signal2)/2) signal1 <- lapply(signal1, rep, each=2) %>% as.data.frame()
   }
 
   # Compare each signal and average distances
