@@ -4,7 +4,7 @@
 \alias{avgSignals}
 \title{Takes the average signal of a list of n-dimensional signals.}
 \usage{
-avgSignals(signal_list, index = T)
+avgSignals(signal_list, index = TRUE)
 }
 \arguments{
 \item{signal_list}{A list of dataframes with n columns that represent the signals to average.}
@@ -28,5 +28,5 @@ sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2,
                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 sigList <- list(sig1, sig2, sig3)
-avgSignals(sigList, index=F)
+avgSignals(sigList, index=FALSE)
 }

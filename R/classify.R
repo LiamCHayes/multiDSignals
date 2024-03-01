@@ -1,5 +1,4 @@
 ### Functions to classify signals
-# Needs functions from compare.R
 
 
 #' Classify a signal.
@@ -22,8 +21,8 @@
 #'                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
 #'                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 #' sigList <- list(sig1, sig2, sig3)
-#' classifySignals(signalOption, sig1, index=F)
-classifySignals <- function(signalOptions, signal, index=T) {
+#' classifySignals(sigList, sig1, index=FALSE)
+classifySignals <- function(signalOptions, signal, index=TRUE) {
   distances <- rep(0, length(signalOptions))
   for (s in signalOptions) {
     compareSignals(s, signal, index)
@@ -53,8 +52,8 @@ classifySignals <- function(signalOptions, signal, index=T) {
 #'                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
 #'                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 #' sigList <- list(sig1, sig2, sig3)
-#' classifySignals_highVar(signalOption, sig1, nSigs=2, index=F)
-classifySignals_highVar <- function(signalOptions, signal, nSigs, index=T) {
+#' classifySignals_highVar(sigList, sig1, nSigs=2, index=FALSE)
+classifySignals_highVar <- function(signalOptions, signal, nSigs, index=TRUE) {
   distances <- rep(0, length(signalOptions))
   for (s in signalOptions) {
     compareSignals_highVar(s, signal, nSigs, index)

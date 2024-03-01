@@ -4,7 +4,7 @@
 \alias{classifySignals}
 \title{Classify a signal.}
 \usage{
-classifySignals(signalOptions, signal, index = T)
+classifySignals(signalOptions, signal, index = TRUE)
 }
 \arguments{
 \item{signalOptions}{A list of dataframes with n columns which represent the options to classify signal as.}
@@ -30,5 +30,5 @@ sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2,
                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 sigList <- list(sig1, sig2, sig3)
-classifySignals(signalOption, sig1, index=F)
+classifySignals(sigList, sig1, index=FALSE)
 }

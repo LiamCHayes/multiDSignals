@@ -4,7 +4,7 @@
 \alias{classifySignals_highVar}
 \title{Classify a signal based on the nSigs highest variance signals.}
 \usage{
-classifySignals_highVar(signalOptions, signal, nSigs, index = T)
+classifySignals_highVar(signalOptions, signal, nSigs, index = TRUE)
 }
 \arguments{
 \item{signalOptions}{A list of dataframes with n columns which represent the options to classify signal as.}
@@ -32,5 +32,5 @@ sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2,
                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 sigList <- list(sig1, sig2, sig3)
-classifySignals_highVar(signalOption, sig1, nSigs=2, index=F)
+classifySignals_highVar(sigList, sig1, nSigs=2, index=FALSE)
 }

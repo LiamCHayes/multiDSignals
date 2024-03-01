@@ -1,11 +1,13 @@
 ### Functions to operate on signals
-# Needs tidyverse and dtw
 
 
 #' Takes the average signal of a list of n-dimensional signals.
 #'
 #' @param signal_list A list of dataframes with n columns that represent the signals to average.
 #' @param index Boolean which is true if there is an index column in the dataframes (index column must be the first column).
+#'
+#' @importFrom dplyr pull relocate
+#' @importFrom tibble add_column
 #'
 #' @return A single dataframe that represents the average signal.
 #' @export
@@ -21,8 +23,8 @@
 #'                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
 #'                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 #' sigList <- list(sig1, sig2, sig3)
-#' avgSignals(sigList, index=F)
-avgSignals <- function(signal_list, index=T) {
+#' avgSignals(sigList, index=FALSE)
+avgSignals <- function(signal_list, index=TRUE) {
   # Check if data frames have same number of columns
   if (length(sapply(signal_list, ncol) %>% unique) != 1) {
     stop('Data frames have a different number of columns')
@@ -44,7 +46,7 @@ avgSignals <- function(signal_list, index=T) {
       } else {
         while (length(avgVec) < length(sigs[[i]])/2) avgVec <- rep(avgVec, each=2)
       }
-      alignment <- dtw(avgVec, sigs[[i]], k=T, step=typeIIIc)
+      alignment <- dtw(avgVec, sigs[[i]], keep.internals=TRUE, step.pattern=typeIIIc)
       new_vec2 <- rep(0, length(alignment$index2))
       new_vec2[alignment$index1] <- sigs[[i]][alignment$index2]
 

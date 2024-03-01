@@ -4,7 +4,7 @@
 \alias{compareSignals_highVar}
 \title{Compares the m highest variance signals from two n-dimesional signals (m < n).}
 \usage{
-compareSignals_highVar(signal1, signal2, nSigs, index = T)
+compareSignals_highVar(signal1, signal2, nSigs, index = TRUE)
 }
 \arguments{
 \item{signal1}{A dataframe with n columns.}
@@ -28,5 +28,5 @@ sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10),
 sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1,
                    y = c(2,3,4,5,4,5,6,7,8,8)+1,
                    z = c(1,1,2,3,2,3,4,3,4,5)+1)
-compareSignals(sig1, sig2, nSigs=2, index=F)
+compareSignals_highVar(sig1, sig2, nSigs=2, index=FALSE)
 }
