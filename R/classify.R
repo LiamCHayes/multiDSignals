@@ -24,8 +24,10 @@
 #' classifySignals(sigList, sig1, index=FALSE)
 classifySignals <- function(signalOptions, signal, index=TRUE) {
   distances <- rep(0, length(signalOptions))
+  i <- 1
   for (s in signalOptions) {
-    compareSignals(s, signal, index)
+    distances[i] <- compareSignals(s, signal, index)
+    i <- i+1
   }
   which.min(distances)
 }
@@ -55,8 +57,10 @@ classifySignals <- function(signalOptions, signal, index=TRUE) {
 #' classifySignals_highVar(sigList, sig1, nSigs=2, index=FALSE)
 classifySignals_highVar <- function(signalOptions, signal, nSigs, index=TRUE) {
   distances <- rep(0, length(signalOptions))
+  i <- 1
   for (s in signalOptions) {
-    compareSignals_highVar(s, signal, nSigs, index)
+    distances[i] <- compareSignals_highVar(s, signal, nSigs, index)
+    i <- i+1
   }
   which.min(distances)
 }
