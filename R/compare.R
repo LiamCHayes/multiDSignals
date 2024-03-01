@@ -12,8 +12,12 @@
 #' @export
 #'
 #' @examples
-#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10), y = c(2,3,4,5,4,5,6,7,8,8), z = c(1,1,2,3,2,3,4,3,4,5))
-#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1, y = c(2,3,4,5,4,5,6,7,8,8)+1, z = c(1,1,2,3,2,3,4,3,4,5)+1)
+#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10),
+#'                    y = c(2,3,4,5,4,5,6,7,8,8),
+#'                    z = c(1,1,2,3,2,3,4,3,4,5))
+#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1,
+#'                    y = c(2,3,4,5,4,5,6,7,8,8)+1,
+#'                    z = c(1,1,2,3,2,3,4,3,4,5)+1)
 #' compareSignals(sig1, sig2, index=F)
 compareSignals <- function(signal1, signal2, index=T) {
   # Check if data frames have same number of columns
@@ -53,8 +57,12 @@ compareSignals <- function(signal1, signal2, index=T) {
 #' @export
 #'
 #' @examples
-#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10), y = c(2,3,4,5,4,5,6,7,8,8), z = c(1,1,2,3,2,3,4,3,4,5))
-#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1, y = c(2,3,4,5,4,5,6,7,8,8)+1, z = c(1,1,2,3,2,3,4,3,4,5)+1)
+#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10),
+#'                    y = c(2,3,4,5,4,5,6,7,8,8),
+#'                    z = c(1,1,2,3,2,3,4,3,4,5))
+#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1,
+#'                    y = c(2,3,4,5,4,5,6,7,8,8)+1,
+#'                    z = c(1,1,2,3,2,3,4,3,4,5)+1)
 #' compareSignals(sig1, sig2, nSigs=2, index=F)
 compareSignals_highVar <- function(signal1, signal2, nSigs, index=T) {
   # Check if data frames have same number of columns

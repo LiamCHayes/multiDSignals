@@ -12,9 +12,15 @@
 #' @export
 #'
 #' @examples
-#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10), y = c(2,3,4,5,4,5,6,7,8,8), z = c(1,1,2,3,2,3,4,3,4,5))
-#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1, y = c(2,3,4,5,4,5,6,7,8,8)+1, z = c(1,1,2,3,2,3,4,3,4,5)+1)
-#' sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2, y = c(2,3,4,5,4,5,6,7,8,8)+3, z = c(1,1,2,3,2,3,4,3,4,5)+2)
+#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10),
+#'                    y = c(2,3,4,5,4,5,6,7,8,8),
+#'                    z = c(1,1,2,3,2,3,4,3,4,5))
+#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1,
+#'                    y = c(2,3,4,5,4,5,6,7,8,8)+1,
+#'                    z = c(1,1,2,3,2,3,4,3,4,5)+1)
+#' sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2,
+#'                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
+#'                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 #' sigList <- list(sig1, sig2, sig3)
 #' classifySignals(signalOption, sig1, index=F)
 classifySignals <- function(signalOptions, signal, index=T) {
@@ -37,9 +43,15 @@ classifySignals <- function(signalOptions, signal, index=T) {
 #' @export
 #'
 #' @examples
-#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10), y = c(2,3,4,5,4,5,6,7,8,8), z = c(1,1,2,3,2,3,4,3,4,5))
-#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1, y = c(2,3,4,5,4,5,6,7,8,8)+1, z = c(1,1,2,3,2,3,4,3,4,5)+1)
-#' sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2, y = c(2,3,4,5,4,5,6,7,8,8)+3, z = c(1,1,2,3,2,3,4,3,4,5)+2)
+#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10),
+#'                    y = c(2,3,4,5,4,5,6,7,8,8),
+#'                    z = c(1,1,2,3,2,3,4,3,4,5))
+#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1,
+#'                    y = c(2,3,4,5,4,5,6,7,8,8)+1,
+#'                    z = c(1,1,2,3,2,3,4,3,4,5)+1)
+#' sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2,
+#'                    y = c(2,3,4,5,4,5,6,7,8,8)+3,
+#'                    z = c(1,1,2,3,2,3,4,3,4,5)+2)
 #' sigList <- list(sig1, sig2, sig3)
 #' classifySignals_highVar(signalOption, sig1, nSigs=2, index=F)
 classifySignals_highVar <- function(signalOptions, signal, nSigs, index=T) {
