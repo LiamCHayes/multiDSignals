@@ -1,10 +1,11 @@
 Package: multiDSignals
-Title: What the Package Does (One Line, Title Case)
+Title: Work With Multi-Dimensional Signals
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Liam", "Hayes", , "liamcharleshayes@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: Functions to facilitate working with multi-dimensional signals. 
+    Includes operations, comparing, smoothing, aligning, and classifying functions.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
