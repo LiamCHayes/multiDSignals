@@ -1,11 +1,21 @@
 ### Functions to operate on signals
 # Needs tidyverse and dtw
 
-# Takes a list of dataframes of signals and returns the elementwise average of
-# the signals. All dataframes must have the same number of columns but can have
-# a different number of rows. If index is true, it means the list of dataframes
-# has an index in the first row of each dataframe. Returns 1 dataframe with
-# averages of all the signals.
+
+#' Takes the average signal of a list of n-dimensional signals.
+#'
+#' @param signal_list A list of dataframes with n columns that represent the signals to average.
+#' @param index Boolean which is true if there is an index column in the dataframes (index column must be the first column).
+#'
+#' @return A single dataframe that represents the average signal.
+#' @export
+#'
+#' @examples
+#' sig1 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10), y = c(2,3,4,5,4,5,6,7,8,8), z = c(1,1,2,3,2,3,4,3,4,5))
+#' sig2 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+1, y = c(2,3,4,5,4,5,6,7,8,8)+1, z = c(1,1,2,3,2,3,4,3,4,5)+1)
+#' sig3 <- data.frame(x = c(1,2,3,4,5,6,7,8,9,10)+2, y = c(2,3,4,5,4,5,6,7,8,8)+3, z = c(1,1,2,3,2,3,4,3,4,5)+2)
+#' sigList <- list(sig1, sig2, sig3)
+#' avgSignals(sigList, index=F)
 avgSignals <- function(signal_list, index=T) {
   # Check if data frames have same number of columns
   if (length(sapply(signal_list, ncol) %>% unique) != 1) {
