@@ -26,7 +26,7 @@ movingAverage <- function(signal, window, index=TRUE) {
     sm <- rep(0, nrow(signal))
     for (i in 1:nrow(signal)) {
       if (i < window || i > nrow(signal)-window) sm[i] <- signal[[s]][i]
-      else sm[i] <- mean(signal[[s]][i-window:i+window])
+      else sm[i] <- mean(signal[[s]][(i-window):(i+window)])
     }
     smoothed <- c(smoothed, list(sm))
   }
@@ -39,5 +39,8 @@ movingAverage <- function(signal, window, index=TRUE) {
   colnames(smoothed) <- colnames(signal)
   smoothed
 }
+
+
+
 
 

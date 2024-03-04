@@ -2,6 +2,7 @@
 
 export("%>%")
 export(avgSignals)
+export(avgSignalsSmoothed)
 export(classifySignals)
 export(classifySignals_highVar)
 export(compareSignals)
